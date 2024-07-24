@@ -114,9 +114,39 @@ macro_rules! testgen_all {
 
         // test padding
         burn_tensor::testgen_padding!();
+    };
+}
 
+#[allow(missing_docs)]
+#[macro_export]
+macro_rules! testgen_quantization {
+    () => {
         // test quantization
         burn_tensor::testgen_calibration!();
         burn_tensor::testgen_scheme!();
+        burn_tensor::testgen_quantize!();
+
+        // test ops
+        burn_tensor::testgen_q_abs!();
+        burn_tensor::testgen_q_add!();
+        burn_tensor::testgen_q_aggregation!();
+        burn_tensor::testgen_q_all!();
+        burn_tensor::testgen_q_any!();
+        burn_tensor::testgen_q_arg!();
+        burn_tensor::testgen_q_cat!();
+        burn_tensor::testgen_q_chunk!();
+        burn_tensor::testgen_q_clamp!();
+        burn_tensor::testgen_q_cos!();
+        burn_tensor::testgen_q_div!();
+        burn_tensor::testgen_q_erf!();
+        burn_tensor::testgen_q_exp!();
+        burn_tensor::testgen_q_expand!();
+        burn_tensor::testgen_q_flip!();
+        burn_tensor::testgen_q_gather_scatter!();
+        burn_tensor::testgen_q_log!();
+        burn_tensor::testgen_q_log1p!();
+        burn_tensor::testgen_q_map_comparison!();
+        burn_tensor::testgen_q_mask!();
+        burn_tensor::testgen_q_matmul!();
     };
 }
