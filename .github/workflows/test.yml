@@ -31,7 +31,7 @@ env:
   # Note: It is not possible to define env vars in composite actions.
   # To work around this issue we use inputs and define all the env vars here.
 
-  RUST_PREVIOUS_VERSION: 1.79.0
+  RUST_PREVIOUS_VERSION: 1.80.0
 
   # Cargo
   CARGO_TERM_COLOR: "always"
@@ -157,6 +157,7 @@ jobs:
           vulkan-sdk-version: ${{ env.VULKAN_SDK_VERSION }}
           mesa-version: ${{ env.MESA_VERSION }}
           mesa-ci-build-version: ${{ env.MESA_CI_BINARY_BUILD }}
+          cargo-package-to-clean: burn-tch
       # --------------------------------------------------------------------------------
       - name: Install grcov
         if: matrix.rust == 'stable'
